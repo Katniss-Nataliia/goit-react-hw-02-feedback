@@ -22,7 +22,9 @@ export class FeedbackWidget extends Component {
         this.setState({bad: this.state.bad + 1})
     }
     countTotalFeedback = () => {
-       
+       let total = 0
+       total = this.state.good + this.state.neutral + this.state.bad;
+       return total
 
     }
 
@@ -39,7 +41,7 @@ export class FeedbackWidget extends Component {
             <p>Good: {this.state.good}</p>
             <p>Neutral: {this.state.neutral}</p>
             <p>Bad: {this.state.bad}</p>
-            <p>Total: </p>
+            <p>Total:</p>
         </div>
       );
     }
