@@ -1,4 +1,9 @@
 import React, { Component } from "react";
+import {
+    MainContainer,
+    Buttns
+} from './feedback.styled'
+
 
 export class FeedbackWidget extends Component {
 
@@ -52,18 +57,19 @@ export class FeedbackWidget extends Component {
 
         const FeedbackOptions = () => {
             return (
-                <div>
+                <div><MainContainer>
                     <h1>Please leave feedback</h1>
-                    <button type="button" onClick={this.handleIncrementGood}>Good</button>
-                    <button type="button" onClick={this.handleIncrementNeutral}>Neutral</button>
-                    <button type="button" onClick={this.handleIncrementBad}>Bad</button>
+                    <Buttns type="button" onClick={this.handleIncrementGood}>Good</Buttns>
+                    <Buttns type="button" onClick={this.handleIncrementNeutral}>Neutral</Buttns>
+                    <Buttns type="button" onClick={this.handleIncrementBad}>Bad</Buttns>
+                    </MainContainer>
                 </div>
             )
         }
 
         const Statistics = () => {
             return (
-                <div>
+                <div><MainContainer>
                     {countTotalFeedback() === 0 ? (
                         //if there is no feedback, display the following:
                         <p>No feedback</p>
@@ -78,6 +84,7 @@ export class FeedbackWidget extends Component {
                             <p>Positive Percentage: {countPositivePercentage()}%</p>
                         </>
                     )}
+                    </MainContainer>
                 </div>
             )
         }
